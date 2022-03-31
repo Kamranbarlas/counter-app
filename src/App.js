@@ -27,10 +27,13 @@ class App extends Component {
     const counters = [... this.state.counters];
     const index = counters.indexOf(counter);
     counters[index] = {...counter};
-    if (counters[index] <= 0){
+    if (counters[index].value === 0){
+      alert("Out of Range!");
+    }
+    if (counters[index].value !== 0){
       counters[index].value--;
     }
-    alert("Out of Range!");
+    
     
     this.setState({ counters });
     console.log(counter);
